@@ -32,6 +32,7 @@ jobs:
         
           script: |
             cd /var/repo/CSE-135-site
+            git pull
             cp -r roberts135.online /var/www/roberts135.online
             cp -r collector.roberts135.online /var/www/collector.roberts135.online
             cp -r reporting.roberts135.online /var/www/reporting.roberts135.online
