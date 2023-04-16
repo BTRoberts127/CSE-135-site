@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/favicon.svg">
+  <title>CSE 135 Project Site</title>
+
+  <style>
+    :root {
+      --background-shaded: lightgray;
+    }
+
+    header {
+      display: grid;
+      grid-template: "header teamNav";
+      grid-template-columns: 1fr auto;
+    }
+
+    h1 {
+      grid-area: header;
+    }
+
+    #teamNav {
+      grid-area: teamNav;
+      background-color: var(--background-shaded)
+    }
+
+    p {
+      background-color: var(--background-shaded)
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>CSE 135</h1>
+    
+    <section id="teamInfo">
+      <h2>Team Info</h2>
+      <p>Team working on learning server-side web development</p>
+      <nav id="teamNav">
+        <ul>
+          <li><a href="members/brandonroberts">Brandon Roberts</a></li>
+        </ul>
+      </nav>
+    </section>
+  </header>
+  <section>
+    <h2>Homework 1</h2>
+    <nav id="homework1Nav">
+      <ul>
+        <li><a href="hello.php">PHP</a></li>
+        <li><a href="#">Node</a></li>
+        <li><a href="#">Analytics</a></li>
+      </ul>
+    </nav>
+  </section>
+  <section>
+    <h2>Homework 2</h2>
+    <p>
+      TBD
+    </p>
+  </section>
+  <section>
+    <h2>Analytics App</h2>
+    <p>
+      TBD
+    </p>
+  </section>
+  <footer>
+    <p>Page made for CSE 135 Spring 2023</p>
+  </footer>
+
+</body>
+
+</html>

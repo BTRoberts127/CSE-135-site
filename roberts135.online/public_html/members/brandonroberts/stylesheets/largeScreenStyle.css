@@ -1,0 +1,273 @@
+/*Validation issues due to newer font-swap and rotate properties*/
+
+/* latin, from https://fonts.googleapis.com/css2?family=Lato */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/lato/v23/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: italic;
+    font-display: swap;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/lato/v23/S6u8w4BMUTPHjxsAXC-q.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/lato/v23/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+    --main-background-color: #efefef;
+    --nav-background-color: #eef;
+    --border-color: black;
+    --link-color: blue;
+    --accent-color: red;
+    --paragraph-max-width: 60ch;
+    --paragraph-min-width: 40ch;
+    --paragraph-font-size: 1.5rem;
+    --h1-font-size: 3rem;
+    --h2-font-size: 2.5rem;
+    --h3-font-size: 2rem;
+    --column-gap: 5rem;
+    --clear: #0000;
+}
+
+/*Animations guide from https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations*/
+@keyframes picture-flip-in {
+    from {
+        transform-origin: top;
+        rotate: 30deg;
+        position: relative;
+        left: 50%;
+    }
+
+    to {
+        transform-origin: top;
+        rotate: 0deg;
+        position: relative;
+        left: 0%;
+    }
+}
+
+* {
+    font-family: 'Lato', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+strong {
+    font-weight: 700;
+}
+
+em {
+    font-style: italic;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--main-background-color);
+}
+
+header {
+    display: grid;
+    grid-template-areas:
+        "nav h1 picture"
+        "nav subheading picture";
+    grid-template-columns: auto 3fr 1fr;
+    grid-template-rows: auto auto;
+    height: fit-content;
+    width: 100%;
+    column-gap: var(--column-gap);
+    align-items: start;
+    border-style: solid;
+    overflow: hidden;
+}
+
+main p {
+    max-width: var(--paragraph-max-width);
+    min-width: var(--paragraph-min-width);
+    font-size: var(--paragraph-font-size);
+}
+
+table {
+    max-width: var(--paragraph-max-width);
+    min-width: var(--paragraph-min-width);
+    font-size: var(--paragraph-font-size);
+}
+
+main li {
+    max-width: var(--paragraph-max-width);
+    min-width: var(--paragraph-min-width);
+    font-size: var(--paragraph-font-size);
+}
+
+main pre {
+    max-width: var(--paragraph-max-width);
+    min-width: var(--paragraph-min-width);
+    font-size: var(--paragraph-font-size);
+}
+
+main details {
+    max-width: var(--paragraph-max-width);
+    min-width: var(--paragraph-min-width);
+    font-size: var(--paragraph-font-size);
+}
+
+a {
+    color: var(--link-color);
+}
+
+h1 {
+    font-weight: 700;
+    grid-area: h1;
+    font-size: var(--h1-font-size);
+    justify-self: center;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: var(--h2-font-size);
+}
+
+h3 {
+    font-weight: 700;
+    font-size: var(--h3-font-size);
+}
+
+hr {
+    height: 5px;
+    width: 100%;
+}
+
+.headingPicture {
+    grid-area: picture;
+    justify-self: right;
+    animation: picture-flip-in;
+    animation-duration: 2s;
+}
+
+.subheading {
+    grid-area: subheading;
+    justify-self: center;
+}
+
+.subheading p {
+    max-width: var(--paragraph-max-width);
+    min-width: var(--paragraph-min-width);
+    font-size: var(--paragraph-font-size)
+}
+
+/*Standard navigation*/
+@media (pointer: fine) {
+    #hambugerOpen {
+        display: none;
+    }
+
+    #hambugerClose {
+        display: none;
+    }
+    
+    nav > ul {
+        display: flex;
+    }
+
+    nav li {
+        padding: 5px;
+    }
+}
+
+/*Hamburger menu
+Inspired by and mainly following tutorial at
+https://codepen.io/markcaron/pen/pPZVWO*/
+@media not (pointer: fine) {
+    /*Hide nav if not in use*/
+    #hambugerOpen:not(:target) + * + ul {
+        display: none;
+    }
+
+    /*Show nav if open*/
+    nav > #hamburgerOpen:target + * ul {
+        display: flex;
+    }
+
+    /*Hide open button if open*/
+    #hambugerOpen:target {
+        display: none;
+    }
+
+    /*Hide close button if closed*/
+    #hambugerOpen:not(:target) + a {
+        display: none;
+    }
+
+    /*Increase spacing in case of hamburger*/
+    nav li {
+        padding: 25px;
+    }
+}
+
+nav {
+    grid-area: nav;
+    justify-self: left;
+}
+
+/*Flexbox for nav bar*/
+nav > ul {
+    padding: 5px;
+    flex-direction: column;
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
+    border-style: solid;
+    border-color: var(--border-color);
+    border-radius: 10px;
+    background-color: var(--nav-background-color);
+}
+
+/*Remove bullet points from nav items*/
+nav li {
+    text-align: center;
+    list-style: none;
+}
+
+/*Remove underline from nav links*/
+nav > ul a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--link-color);
+    padding: 5px;
+    border-radius: 10px;/*To make background highlight round if hovered*/
+    background-color: var(--clear);
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+/*Underline current nav link*/
+nav > ul a[aria-current] {
+    text-decoration: underline;
+    text-decoration-color: var(--accent-color);
+}
+
+/*As per advice from Camdyn Rasque in Slack general thread*/
+@media (hover: hover) {
+    nav > ul a:hover {
+        background-color: var(--accent-color);
+        transition-property: background-color;
+        transition-duration: 0.5s;
+    }
+}
