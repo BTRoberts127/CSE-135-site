@@ -14,12 +14,13 @@
     <p>This page was generated with PHP.</p>
     <p>This program was run at: 
         <?php
-            print time();
+            date_default_timezone_set('America/Los_Angeles');
+            print date('m/y/d \a\t h:m:s', time());
         ?>
     </p>
     <p>Your current IP Address is: 
         <?php
-            print $_SERVER['REMOTE_ADDR']
+            print $_SERVER['REMOTE_ADDR'];
         ?>
     </p>
 </body>
