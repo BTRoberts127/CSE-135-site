@@ -1,4 +1,4 @@
-
+#!/usr/bin/python3
 # Headers
 print("Cache-Control: no-cache")
 print("Set-Cookie: destroyed")

@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import sys
 import os
 
@@ -8,7 +9,8 @@ print("Cache-Control: no-cache")
 username = sys.stdin.read()
 
 # Check to see if a proper name was sent
-if username[0] == 'u':
+name = ""
+if len(username) > 0:
    name = username[9:]
 
 # Set the cookie using a header, add extra \r\n to end headers
