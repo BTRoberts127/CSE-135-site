@@ -35,29 +35,45 @@
     #hw2 {
       display: grid;
       grid-template-areas:
-        "h2 h2"
-        "perlHeading cHeading"
-        "perlList cList";
+        "h2 h2 h2 h2"
+        "perlHeading cHeading phpHeading pyHeading"
+        "perlList cList phpList pyList";
     }
 
     #hw2 > h2 {
       grid-area: h2;
     }
 
-    #perlHeading{
+    #perlHeading {
       grid-area: perlHeading;
     }
 
-    #cHeading{
+    #cHeading {
       grid-area: cHeading;
     }
+
+    #phpHeading {
+      grid-area: phpHeading;
+    }
+
+    #pyHeading {
+      grid-area: pyHeading;
+    }
     
-    #perlList{
+    #perlList {
       grid-area: perlList;
     }
     
-    #cList{
+    #cList {
       grid-area: cList;
+    }
+
+    #phpList {
+      grid-area: phpList;
+    }
+
+    #pyList {
+      grid-area: pyList;
     }
   </style>
 </head>
@@ -108,6 +124,26 @@
       <li><a href="cgi-bin/c-post-echo.cgi">POST Echo</a></li>
       <li><a href="cgi-bin/c-general-request-echo.cgi">General Echo</a></li>
       <li><a href="c-cgiform.html">Sessioning</a></li>
+    </ul>
+    <h3 id="phpHeading">PHP</h3>
+    <ul id="phpList">
+      <li><a href="cgi-bin/php-html-world.php">Hello, PHP!</a></li>
+      <li><a href="cgi-bin/php-json-world.php">Hello, PHP! (JSON)</a></li>
+      <li><a href="cgi-bin/php-env.php">Environment Variables</a></li>
+      <li><a href="cgi-bin/php-get-echo.php">GET Echo</a></li>
+      <li><a href="cgi-bin/php-post-echo.php">POST Echo</a></li>
+      <li><a href="cgi-bin/php-general-echo.php">General Echo</a></li>
+      <li><a href="php-cgiform.html">Sessioning</a></li>
+    </ul>
+    <h3 id="pythonHeading">Python</h3>
+    <ul id="pythonList">
+      <li><a href="cgi-bin/py-html-world.py">Hello, Python!</a></li>
+      <li><a href="cgi-bin/py-json-world.py">Hello, Python! (JSON)</a></li>
+      <li><a href="cgi-bin/py-env.py">Environment Variables</a></li>
+      <li><a href="cgi-bin/py-get-echo.py">GET Echo</a></li>
+      <li><a href="cgi-bin/py-post-echo.py">POST Echo</a></li>
+      <li><a href="cgi-bin/py-general-echo.py">General Echo</a></li>
+      <li><a href="py-cgiform.html">Sessioning</a></li>
     </ul>
   </section>
   <section id="analyticsApp">
