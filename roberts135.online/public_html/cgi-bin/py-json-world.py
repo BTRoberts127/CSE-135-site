@@ -8,9 +8,9 @@ print("Cache-Control: no-cache")
 print("Content-type: application/json\r\n")
 # Print JSON string
 content = {
-    'title' : 'Brandon copy of Hello, Perl!',
-    'heading' : 'Hello, Perl!',
-    'message' : 'This page was generated with the Perl programming language',
+    'title' : 'Hello, Python!',
+    'heading' : 'Hello, Python!',
+    'message' : 'This page was generated with the Python programming language',
     'time' : str(datetime.datetime.now()),
     'IP' : os.environ['REMOTE_ADDR']
     }
