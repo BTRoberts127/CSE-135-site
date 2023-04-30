@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1 align="center">Environment Variables</h1>
+    <h1 align="center">Post Echo</h1>
     <hr />
     <ul>
         <?php
