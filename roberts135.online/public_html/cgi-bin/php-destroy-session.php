@@ -19,7 +19,7 @@
     ?>
     <p><b>Name:</b></p>
     <a href="/php-cgiform.html">Back to CGI Form</a><br>
-    <a href="/cgi-bin/php-sessions-1.php">Back to Session Page 1</a>
+    <a href="/cgi-bin/php-sessions-1.php">Back to Session Page 1</a><br>
     <a href="/cgi-bin/php-sessions-2.php">Back to Session Page 2</a>
 
 </body>
