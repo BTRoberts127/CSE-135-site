@@ -10,9 +10,9 @@ print("<html><head><title>Post Echo</title></head>\
 <hr/><ul>")
 request_body = sys.stdin.read()
 tokens = request_body.split("&")
-if len(tokens) > 0:
-    for token in tokens:
-        split_token = token.split("=")
+for token in tokens:
+    split_token = token.split("=")
+    if len(split_token) == 2:
         print("<li><b>" + split_token[0] + ":</b> " + split_token[1] + "</li>")
 # Print HTML footer
 print("</ul></body></html>")
