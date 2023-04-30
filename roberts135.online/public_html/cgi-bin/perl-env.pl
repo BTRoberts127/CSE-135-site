@@ -5,8 +5,8 @@ print "Content-type: text/html \n\n";
 # print HTML file top
 print <<END;
 <!DOCTYPE html>
-<html><head><title>Brandon copy of Environment Variables</title>
-</head><body><h1 align="center">Environment Variables</h1>
+<html><head><title>Environment Variables</title>
+</head><body><h1 align="center">Brandon copy of Environment Variables</h1>
 <hr>
 END
 
