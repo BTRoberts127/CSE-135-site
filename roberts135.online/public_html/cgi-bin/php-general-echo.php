@@ -11,22 +11,31 @@
 <body>
     <h1 align="center">Environment Variables</h1>
     <hr />
-    <h2>Environment Variables:</h2>
+    <p><b>Request Method:</b> 
+        <?php
+            print $_SERVER['REQUEST_METHOD'];
+        ?>
+    </p>
+    <p><b>Protocol:</b> 
+        <?php
+            print $_SERVER['SERVER_PROTOCOL'];
+        ?>
+    </p>
+    <h2>Query:</h2>
     <ul>
         <?php
-            $env = getenv();
-            $keys = array_keys($env);
+            $keys = array_keys($_GET);
             foreach ($keys as $key) {
-                print "<li><b>$key:</b> $env[$key]</li>";
+                print "<li><b>$key:</b> $_GET[$key]</li>";
             }
         ?>
     </ul>
-    <h2>Server Variables:</h2>
+    <h2>Message Body:</h2>
     <ul>
         <?php
-            $keys = array_keys($_SERVER);
+            $keys = array_keys($_POST);
             foreach ($keys as $key) {
-                print "<li><b>$key:</b> $_SERVER[$key]</li>";
+                print "<li><b>$key:</b> $_POST[$key]</li>";
             }
         ?>
     </ul>

@@ -11,22 +11,11 @@
 <body>
     <h1 align="center">Environment Variables</h1>
     <hr />
-    <h2>Environment Variables:</h2>
     <ul>
         <?php
-            $env = getenv();
-            $keys = array_keys($env);
+            $keys = array_keys($_POST);
             foreach ($keys as $key) {
-                print "<li><b>$key:</b> $env[$key]</li>";
-            }
-        ?>
-    </ul>
-    <h2>Server Variables:</h2>
-    <ul>
-        <?php
-            $keys = array_keys($_SERVER);
-            foreach ($keys as $key) {
-                print "<li><b>$key:</b> $_SERVER[$key]</li>";
+                print "<li><b>$key:</b> $_POST[$key]</li>";
             }
         ?>
     </ul>
