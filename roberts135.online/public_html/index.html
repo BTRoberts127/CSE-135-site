@@ -31,6 +31,34 @@
     p {
       background-color: var(--background-shaded);
     }
+
+    #hw2 {
+      display: grid;
+      grid-template-areas:
+        "h2 h2"
+        "perlHeading cHeading"
+        "perlList cList";
+    }
+
+    #hw2 > h2 {
+      grid-area: h2;
+    }
+
+    #perlHeading{
+      grid-area: perlHeading;
+    }
+
+    #cHeading{
+      grid-area: cHeading;
+    }
+    
+    #perlList{
+      grid-area: perlList;
+    }
+    
+    #cList{
+      grid-area: cList;
+    }
   </style>
 </head>
 
@@ -48,7 +76,7 @@
       </nav>
     </section>
   </header>
-  <section>
+  <section id="hw1">
     <h2>Homework 1</h2>
     <nav id="homework1Nav">
       <ul>
@@ -58,13 +86,31 @@
       </ul>
     </nav>
   </section>
-  <section>
+  <section id="hw2">
     <h2>Homework 2</h2>
-    <p>
-      TBD
-    </p>
+    <h3 id="perlHeading">Perl</h3>
+    <ul id="perlList">
+      <li><a href="cgi-bin/perl-html-world.pl">Hello, Perl!</a></li>
+      <li><a href="cgi-bin/perl-json-world.pl">Hello, Perl! (JSON)</a></li>
+      <li><a href="cgi-bin/perl-env.pl">Environment Variables (manual)</a></li>
+      <li><a href="cgi-bin/perl-env-pm.pl">Environment Variables (pm)</a></li>
+      <li><a href="cgi-bin/perl-get-echo.pl">GET Echo</a></li>
+      <li><a href="cgi-bin/perl-post-echo.pl">POST Echo</a></li>
+      <li><a href="cgi-bin/perl-general-echo.pl">General Echo</a></li>
+      <li><a href="cgi-bin/perl-sessions-1.pl">Sessioning</a></li>
+    </ul>
+    <h3 id="cHeading">C</h3>
+    <ul id="cList">
+      <li><a href="cgi-bin/c-hello-html-world.cgi">Hello, C!</a></li>
+      <li><a href="cgi-bin/c-hello-json-world.cgi">Hello, C! (JSON)</a></li>
+      <li><a href="cgi-bin/c-env.cgi">Environment Variables</a></li>
+      <li><a href="cgi-bin/c-get-echo.cgi">GET Echo</a></li>
+      <li><a href="cgi-bin/c-post-echo.cgi">POST Echo</a></li>
+      <li><a href="cgi-bin/c-general-request-echo.cgi">General Echo</a></li>
+      <li><a href="cgi-bin/c-session-1.cgi">Sessioning</a></li>
+    </ul>
   </section>
-  <section>
+  <section id="analyticsApp">
     <h2>Analytics App</h2>
     <p>
       TBD
