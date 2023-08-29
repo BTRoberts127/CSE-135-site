@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/favicon.svg">
+  <title>Users for CSE 135</title>
+  <script type="module">
+    import '/zinggrid-master/index.js';
+  </script>
+  <!-- fallback for no module support -->
+  <script nomodule src="/zinggrid-master/dist/zinggrid.min.js" defer></script>
+</head>
+
+<body>
+  <h1>User Grid</h1>
+  <a id="logout" href="/logout.php">Logout</a>
+  <zing-grid editor-controls>
+    <zg-data src="/users.php/users">
+    </zg-data>
+    <zg-colgroup>
+        <zg-column index="id" filter="disabled" hidden></zg-column>
+        <zg-column index="username"></zg-column>
+        <zg-column index="email"></zg-column>
+        <zg-column index="hash" header="Password"></zg-column>
+        <zg-column index="admin"></zg-column>
+    </zg-colgroup>
+  </zing-grid>
+
+</body>
+
+</html>

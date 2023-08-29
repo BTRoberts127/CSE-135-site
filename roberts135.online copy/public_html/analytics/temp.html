@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/favicon.svg">
+    <title>Hello PHP</title>
+</head>
+<body>
+    <h1>PHP Lives!</h1>
+    <form action="https://www.roberts135.online/analyticsapi/static" method="POST">
+        <input type="text" name="test1" id="test1">
+        <button type="submit">Submit</button>
+    </form>
+    <input type="text" id="deleteId">
+    <button id="deleteButton">Delete</button>
+    
+</body>
+<script>
+    document.getElementById("deleteButton").onclick = sendPacket;
+
+    function sendPacket() {
+        fetch("/analyticsapi/" + document.getElementById("deleteId").value, {
+            method: "DELETE"});
+    }
+</script>
+</html>

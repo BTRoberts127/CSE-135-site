@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <title>Brandon Roberts Music and Poetry</title>
+
+        <link rel="icon" href="images/icon.jpg">
+        <link rel="stylesheet" media="screen and (min-width: 1024px)" href="stylesheets/largeScreenStyle.css">
+        <link rel="stylesheet" media="screen and (min-width: 641px) and (max-width: 1023px)" href="stylesheets/mediumScreenStyle.css">
+        <link rel="stylesheet" media="screen and (max-width: 640px)" href="stylesheets/smallScreenStyle.css">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KR52K18MS3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+    
+            gtag('config', 'G-KR52K18MS3');
+        </script>
+    </head>
+    <body>
+        <header>
+            <nav id="mainNav">
+                <a id="hambugerOpen" href="#hambugerOpen">
+                    <img src="images/hambugerMenu.svg" height="45" width="64" alt="Open Menu">
+                </a>
+                <a id="hambugerClose" href="#">
+                    <img src="images/hambugerMenu.svg" height="45" width="64" alt="Close Menu">
+                </a>
+                <ul id="navContent">
+                    <li><a href="index.html">Home/Résumé</a></li>
+                    <li><a href="technicalProjects.html">Technical Projects</a></li>
+                    <li><a href="musicAndPoetry.html" aria-current="page">Music and Poetry</a></li>
+                </ul>
+            </nav>
+
+            <h1>Music and Poetry</h1>
+            
+            <figure id="headerVideo" class="headingPicture">
+                <!-- Using the video pattern shown on https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video,
+                with an image as a fallback option if the browser does not support video.
+                Only trying to serve webm before displaying image instead, as file size is important
+                and a fallback image is provided. Video is already small, and might be played fullscreen,
+                so I do not serve smaller sizes.-->
+                <video controls="controls" preload="metadata" playsinline="playsinline" title="Video of one of my piano improvisations">
+                    <source src="videos/ImprovisationOn19November2022.webm" type="video/webm">
+                    <!--- Here using <picture> to serve WEBP, as in Professor Powell's Images slide deck -->
+                    <picture>
+                        <source srcset="images/pianoPicture125px.webp 125w, images/pianoPicture250px.webp 250w, images/projectsPicture750px.webp 750w"
+                        sizes="(min-width: 10px) 125px, (min-width: 640px) 250px, (min-width: 1024px) 750px" type="image/webp">
+                    <img srcset="images/pianoPicture250px.jpg 250w, images/pianoPicture750px.jpg 750w"
+                        sizes="(min-width: 640px) 250px, (min-width: 1024px) 750px"
+                        src="images/pianoPicture125px.jpg" alt="Image of piano keys" height="133" width="75">
+                    </picture>
+                </video>
+                <figcaption>
+                    <p>One of my piano improvisations</p>
+                </figcaption>
+            </figure>
+            
+            <section id="summary" class="subheading">
+                <h2>Summary</h2>
+                <p>
+                    In addition to computing, I enjoy writing prose and poetry, and improvising
+                    and composing music. Here are a few of my compositions and improvisations,
+                    and below is a link to my profile on Power Poetry.
+                    <br>
+                    <br>
+                    <a href="https://powerpoetry.org/poet/Evelyn12489/poems" rel="external"
+                    title="My Power Poetry Profile" target="_blank">Link to profile</a>
+                </p>
+            </section>
+
+        </header>
+        <main>
+            <section id="selectCompositions">
+                <h2>Select Compositions</h2>
+                <table id="compositionsTable">
+                    <caption>Some of my compositions</caption>
+                    <colgroup>
+                        <col>
+                    </colgroup>
+                    <colgroup>
+                        <col span="2">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="colgroup"><strong>Compositions</strong></th>
+                            <th scope="col"><strong>Files</strong></th>
+                            <th scope="col"><strong>PDF</strong></th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Audio file</th>
+                            <th scope="col">PDF score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">q1</th>
+                            <td><audio controls="controls" title="placeholder improvisation" src="audioFiles/Q1.1.m4a"></audio></td>
+                            <td><a href="https://drive.google.com/file/d/18HJvmlJbZZbV041kcmozXM7UEjCGIqFn/view?usp=sharing" target="_blank">Link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Score for photo slideshow</th>
+                            <td><audio controls="controls" title="placeholder improvisation" src="audioFiles/Copy_of_Untitled.m4a"></audio></td>
+                            <td><a href="https://drive.google.com/file/d/1Poh59YT77VIFGOSnUolHVkqvMdZ4z3B9/view?usp=sharing" target="_blank">Link</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="selectImprovisations">
+                <h2>Select Improvisations</h2>
+                <table id="improvisationsTable">
+                    <caption>Some of my improvisations</caption>
+                    <colgroup>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Audio file</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">14/1/2023</th>
+                            <td><audio controls="controls" title="placeholder improvisation" src="audioFiles/Improvisation_14.1.23.m4a"></audio></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">24/2/2023</th>
+                            <td><audio controls="controls" title="placeholder improvisation" src="audioFiles/New_Recording_192.m4a"></audio></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <hr>
+
+        <footer>
+            <p id="credits">Page made by Brandon Roberts for Professor Powell's WI23 class of CSE 134B</p>
+        </footer>
+    </body>
+</html>

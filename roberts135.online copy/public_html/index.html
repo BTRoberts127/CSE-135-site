@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/favicon.svg">
+  <title>CSE 135 Project Site</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3D8BBSFPMR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3D8BBSFPMR');
+  </script>
+  <script src="analytics/collector.js"></script>
+
+  <style>
+    :root {
+      --background-shaded: lightgray;
+    }
+
+    header {
+      display: grid;
+      grid-template-areas: "header teamNav";
+      grid-template-columns: 1fr auto;
+    }
+
+    h1 {
+      grid-area: header;
+      color: green;
+    }
+
+    #teamNav {
+      grid-area: teamNav;
+      background-color: var(--background-shaded);
+    }
+
+    p {
+      background-color: var(--background-shaded);
+    }
+
+    #hw2 {
+      display: grid;
+      grid-template-areas:
+        "h2 h2 h2 h2"
+        "perlHeading cHeading phpHeading pyHeading"
+        "perlList cList phpList pyList";
+    }
+
+    #hw2 > h2 {
+      grid-area: h2;
+    }
+
+    #perlHeading {
+      grid-area: perlHeading;
+    }
+
+    #cHeading {
+      grid-area: cHeading;
+    }
+
+    #phpHeading {
+      grid-area: phpHeading;
+    }
+
+    #pyHeading {
+      grid-area: pyHeading;
+    }
+    
+    #perlList {
+      grid-area: perlList;
+    }
+    
+    #cList {
+      grid-area: cList;
+    }
+
+    #phpList {
+      grid-area: phpList;
+    }
+
+    #pyList {
+      grid-area: pyList;
+    }
+
+    #testCSS {
+			color: red;
+		}
+  </style>
+  <script src="https://cdn.lr-ingest.com/LogRocket.min.js" crossorigin="anonymous"></script>
+  <script>window.LogRocket && window.LogRocket.init('vcxxmm/cse-135-site');</script>
+</head>
+
+<body>
+  <noscript>
+		<img src="/analyticsapi/static?noscript=true">
+	</noscript>
+  <header>
+    <h1>CSE 135</h1>
+    
+    <section id="teamInfo">
+      <h2>Team Info</h2>
+      <p>Team working on learning server-side web development in CSE 135</p>
+      <nav id="teamNav">
+        <ul>
+          <li><a href="members/brandonroberts">Brandon Roberts</a></li>
+        </ul>
+      </nav>
+    </section>
+  </header>
+  <section id="hw1">
+    <h2>Homework 1</h2>
+    <nav id="homework1Nav">
+      <ul>
+        <li><a href="hello.php">PHP</a></li>
+        <li><a href="#">Node</a></li>
+        <li><a href="report.html">Analytics</a></li>
+      </ul>
+    </nav>
+  </section>
+  <section id="hw2">
+    <h2>Homework 2</h2>
+    <h3 id="perlHeading">Perl</h3>
+    <ul id="perlList">
+      <li><a href="cgi-bin/perl-html-world.pl">Hello, Perl!</a></li>
+      <li><a href="cgi-bin/perl-json-world.pl">Hello, Perl! (JSON)</a></li>
+      <li><a href="cgi-bin/perl-env.pl">Environment Variables (manual)</a></li>
+      <li><a href="cgi-bin/perl-env-pm.pl">Environment Variables (pm)</a></li>
+      <li><a href="cgi-bin/perl-get-echo.pl">GET Echo</a></li>
+      <li><a href="cgi-bin/perl-post-echo.pl">POST Echo</a></li>
+      <li><a href="cgi-bin/perl-general-echo.pl">General Echo</a></li>
+      <li><a href="perl-cgiform.html">Sessioning</a></li>
+    </ul>
+    <h3 id="cHeading">C</h3>
+    <ul id="cList">
+      <li><a href="cgi-bin/c-hello-html-world.cgi">Hello, C!</a></li>
+      <li><a href="cgi-bin/c-hello-json-world.cgi">Hello, C! (JSON)</a></li>
+      <li><a href="cgi-bin/c-env.cgi">Environment Variables</a></li>
+      <li><a href="cgi-bin/c-get-echo.cgi">GET Echo</a></li>
+      <li><a href="cgi-bin/c-post-echo.cgi">POST Echo</a></li>
+      <li><a href="cgi-bin/c-general-request-echo.cgi">General Echo</a></li>
+      <li><a href="c-cgiform.html">Sessioning</a></li>
+    </ul>
+    <h3 id="phpHeading">PHP</h3>
+    <ul id="phpList">
+      <li><a href="cgi-bin/php-html-world.php">Hello, PHP!</a></li>
+      <li><a href="cgi-bin/php-json-world.php">Hello, PHP! (JSON)</a></li>
+      <li><a href="cgi-bin/php-env.php">Environment Variables</a></li>
+      <li><a href="cgi-bin/php-get-echo.php">GET Echo</a></li>
+      <li><a href="cgi-bin/php-post-echo.php">POST Echo</a></li>
+      <li><a href="cgi-bin/php-general-echo.php">General Echo</a></li>
+      <li><a href="php-cgiform.html">Sessioning</a></li>
+    </ul>
+    <h3 id="pythonHeading">Python</h3>
+    <ul id="pythonList">
+      <li><a href="cgi-bin/py-html-world.py">Hello, Python!</a></li>
+      <li><a href="cgi-bin/py-json-world.py">Hello, Python! (JSON)</a></li>
+      <li><a href="cgi-bin/py-env.py">Environment Variables</a></li>
+      <li><a href="cgi-bin/py-get-echo.py">GET Echo</a></li>
+      <li><a href="cgi-bin/py-post-echo.py">POST Echo</a></li>
+      <li><a href="cgi-bin/py-general-echo.py">General Echo</a></li>
+      <li><a href="py-cgiform.html">Sessioning</a></li>
+    </ul>
+  </section>
+  <section id="homeworkThree">
+    <h2>Homework 3</h2>
+    <p>
+      <a href="/routes.html">Routes</a>
+      <a href="/database.html">database.html</a>
+      <a href="/hellodataviz.php">hellodataviz.php</a>
+    </p>
+  </section>
+  <section id="analyticsApp">
+    <h2>Analytics App</h2>
+    <p>
+      <a href="reporting.roberts135.online">Link to reporting site</a>
+    </p>
+  </section>
+  <button onclick="makeanerror();">Trigger JS error</button>
+  <footer>
+    <p>Page made for CSE 135, server analytics, Spring 2023</p>
+  </footer>
+
+</body>
+
+</html>

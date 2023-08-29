@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <title>Brandon Roberts Resume and Portfolio</title>
+
+        <link rel="icon" href="images/icon.jpg">
+        <link rel="stylesheet" media="screen and (min-width: 1024px)" href="stylesheets/largeScreenStyle.css">
+        <link rel="stylesheet" media="screen and (min-width: 641px) and (max-width: 1023px)" href="stylesheets/mediumScreenStyle.css">
+        <link rel="stylesheet" media="screen and (max-width: 640px)" href="stylesheets/smallScreenStyle.css">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KR52K18MS3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+    
+            gtag('config', 'G-KR52K18MS3');
+        </script>
+        <script>
+            document.addEventListener("onload", alert("Welcome to Brandon Roberts's page!"));
+        </script>
+    </head>
+    <body>
+        <header>
+            <nav id="mainNav">
+                <a id="hambugerOpen" href="#hambugerOpen">
+                    <img src="images/hambugerMenu.svg" height="45" width="64" alt="Open Menu">
+                </a>
+                <a id="hambugerClose" href="#">
+                    <img src="images/hambugerMenu.svg" height="45" width="64" alt="Close Menu">
+                </a>
+                <ul id="navContent">
+                    <li><a href="index.html" aria-current="page">Home/Résumé</a></li>
+                    <li><a href="technicalProjects.html">Technical Projects</a></li>
+                    <li><a href="musicAndPoetry.html">Music and Poetry</a></li>
+                </ul>
+            </nav>
+
+            <h1>Brandon Roberts</h1>
+
+            <!--- Here using <picture> to serve WEBP, as in Professor Powell's Images slide deck -->
+            <picture id="profilePicture" class="headingPicture">
+                <source srcset="images/profilePicture212px.webp 212w, images/profilePicture424px.webp 424w, images/profilePicture2121px.webp 2121w"
+                    sizes="(min-width: 10px) 212px, (min-width: 640px) 424px, (min-width: 1024px) 2121px" type="image/webp">
+                <img srcset="images/profilePicture424px.jpg 424w, images/profilePicture2121px.jpg 2121w"
+                    sizes="(min-width: 640px) 424px, (min-width: 1024px) 2121px"
+                    src="images/profilePicture212px.jpg" alt="Picture of Brandon Roberts" height="281" width="212">
+            </picture>
+
+            <section id="contact" class="subheading">
+                <h2>Contact</h2>
+                <p id="email">Email: <a href="mailto:brrobert@ucsd.edu">brrobert@ucsd.edu</a></p>
+            </section>
+        </header>
+        <main>
+            <section id="researchInterests">
+                <h2>Research Interests</h2>
+                <p>
+                    I am interested in researching the applications of computing to musical composition,
+                    both as an assistant to and a model for human compositional creativity, particularly
+                    in the creation of <em>novel</em> forms of music, including in tuning systems beyond twelve-tone
+                    equal temperment. I am also interested in the applications of computing to poetry.
+                </p>
+            </section>
+            
+            <!--Machine-generateable in Google Sheets for easy updating-->
+            <article id="resume">
+                <h2>Résumé</h2>
+                <p id="resumeHeader">
+                        Brandon Roberts<br>
+                        brandontrob@gmail.com (858)-222-9714<br>
+                        8888 Cliffridge Ave, San Diego, CA 92037<br>
+                        University of California, San Diego
+                </p>
+                <section>
+                    <h3>Academic Achievements:</h3>
+                    <p>
+                        Pursuing a BS in Computer Engineering at UC San Diego<br>
+                        Current GPA of 3.940<br>
+                        Phi Beta Kappa<br>
+                        Caledonian Society<br>
+                        Provost Honors 2020-2022
+                    </p>
+                </section>
+                <section>
+                    <h3>Research Experience:</h3>
+                    <p>
+                        Mobility Research Assistant 2020-2021: worked as part of a team of 10 students interviewing stakeholders at MCAS Miramar, and working on human-centered design for optimizing mobility across the base. Helped with data dashboards, visualization, and analysis, research paper drafting and review, and GPX file parsing.
+                    </p>
+                </section>
+                <section>
+                    <h3>Technical Skills:</h3>
+                    <p>
+                        Java, Python, C/C++, MatLab, MIPS/ARM/x86 assembly, System Verilog, Quartus, ModelSim, PSpice, Google Sheets, and Android Studio<br>
+                        Design patterns - strategy, adapter, observer, model-view-presenter, factory, builder, mediator<br>
+                        Design by contract, test-driven development, and behavioral-driven development<br>
+                        Unit testing, integration testing, automated testing, and fuzz testing<br>
+                        GitHub and GitHub Actions<br>
+                        Experience with GPT-3, natural language processing, and its applications<br>
+                        Basics of computer security, operating systems, distributed systems, software engineering, algorithm design, CPU design, ISA design, FPGA use, and hardware accelerator design<br>
+                        Interest in computing and music/procedural composition, algorithm design, and hardware design
+                    </p>
+                </section>
+                <section>
+                    <h3>Activities and Interests:</h3>
+                    <p>
+                        High School Diploma in Social Music, National Piano Guild - 2018<br>
+                        North County Music Festival: 2011-2014, 2016 Recognized Superior Performances<br>
+                        First degree black belt (Shodan Ho) in Karate.<br>
+                        Muir Musical 2022-2023: synth player for Rocky Horror Show and Into the Woods
+                    </p>
+                </section>
+            </article>
+            <!--End resume-->
+        </main>
+
+        <hr>
+
+        <footer>
+            <p id="credits">Page made by Brandon Roberts for Professor Powell's WI23 class of CSE 134B</p>
+        </footer>
+
+        <!-- Adding this template to potentially be used in the future
+        for more concisely specifying the recurring footer across pages -->
+        <template>
+            <footer>
+                <p id="credits">Page made by Brandon Roberts for Professor Powell's WI23 class of CSE 134B</p>
+            </footer>
+        </template>
+    </body>
+</html>

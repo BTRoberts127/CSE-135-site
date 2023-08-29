@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <title>Brandon Roberts Technical Projects</title>
+
+        <link rel="icon" href="images/icon.jpg">
+        <link rel="stylesheet" media="screen and (min-width: 1024px)" href="stylesheets/largeScreenStyle.css">
+        <link rel="stylesheet" media="screen and (min-width: 641px) and (max-width: 1023px)" href="stylesheets/mediumScreenStyle.css">
+        <link rel="stylesheet" media="screen and (max-width: 640px)" href="stylesheets/smallScreenStyle.css">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KR52K18MS3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+    
+            gtag('config', 'G-KR52K18MS3');
+        </script>
+    </head>
+    <body>
+        <header>
+            <nav id="mainNav">
+                <a id="hambugerOpen" href="#hambugerOpen">
+                    <img src="images/hambugerMenu.svg" height="45" width="64" alt="Open Menu">
+                </a>
+                <a id="hambugerClose" href="#">
+                    <img src="images/hambugerMenu.svg" height="45" width="64" alt="Close Menu">
+                </a>
+                <ul id="navContent">
+                    <li><a href="index.html">Home/Résumé</a></li>
+                    <li><a href="technicalProjects.html" aria-current="page">Technical Projects</a></li>
+                    <li><a href="musicAndPoetry.html">Music and Poetry</a></li>
+                </ul>
+            </nav>
+
+            <h1>Technical Projects</h1>
+
+            <figure id="projectsPicture" class="headingPicture">
+                <!--- Here using <picture> to serve WEBP, as in Professor Powell's Images slide deck -->
+                <picture>
+                    <source srcset="images/projectsPicture185px.webp 185w, images/projectsPicture370px.webp 370w, images/projectsPicture740px.webp 740w"
+                        sizes="(min-width: 10px) 185px, (min-width: 640px) 370px, (min-width: 1024px) 740px" type="image/webp">
+                    <img srcset="images/projectsPicture370px.gif 370w, images/projectsPicture740px.gif 740w"
+                        sizes="(min-width: 640px) 370px, (min-width: 1024px) 740px"
+                        src="images/projectsPicture185px.gif" alt="Flowchart model of the backtracking and GPT-3-based poetry generator" height="127" width="148">
+                </picture>
+                <figcaption>
+                    Shown above is the control flow for the poetry generator.<br>
+                    Initially made as part of a group project in LIGN 167, Fall 2022.
+                </figcaption>
+            </figure>
+
+            <section id="summary" class="subheading">
+                <h2>Summary</h2>
+                <p>
+                    The projects I tend to enjoy focus on the intersection of music, poetry,
+                    and computing. I also enjoy implementing programs in Google Sheets. Shown
+                    below are two of the more recent projects I was involved in, one of which
+                    I completed as part of a group of four students for a class, and one of
+                    which I completed on my own.
+                </p>
+            </section>
+        </header>
+        <main>
+            <article id="poetryGenerator">
+                <h2>Poetry Generator</h2>
+                <section id="overview">
+                    <h2>Backtracking + GPT Poetry Generator</h2>
+                    <p>
+                        I worked on this project with a team of three other undergraduates as our final project for
+                        Professor Bergen's Fall 2022 offering of LIGN 167.
+                    </p>
+                    <aside id="teamDescription">
+                        <p>The full team consisted of Nicole Rangan, Zhengyuan Zhou, Kamen Redfield, and me.</p>
+                        <p>
+                            The project GitHub repository can be found
+                            <a href="https://github.com/Kamen-R/Machine_Poetry" rel="external"
+                            title="Poetry Generator GitHub Repository" target="_blank">here</a>.
+                        </p>
+                    </aside>
+                </section>
+                <section id="details">
+                    <h3>Description</h3>
+                    <p id="description">
+                        The poetry generator works by requesting tokens one at a time from GPT-3 based
+                        on a user-provided prompt. After each token, it checks if the result is inconsistent
+                        with the user-provided poetry format (meter, rhyme) and backtracks if there is.
+                        GPT-3 normally struggles with strict poetic forms, making <em>frequent</em> errors in meter
+                        and <em>occasional</em> errors in rhyme. This project sought to rectify this by leveraging
+                        the fact that poetic meters are <strong>deterministically</strong> verifiable, meaning
+                        it is possible to use backtracking or other search algorithms to prompt GPT-3 correct
+                        any errors it makes.
+                    </p>
+                    <details id="pseudocode">
+                        <summary>High-level pseudocode:</summary>
+                        <pre><code>generatePoem(text):
+If text is a valid poem, return text
+Otherwise, if text could not be the start of a valid poem, return null
+Generate the top five possible tokens with GPT-3(text)
+For each token:
+    Append it to text
+    Call generatePoem(text)
+    If the result is not null, return it
+    Otherwise, pop the last token</code></pre>
+                    </details>
+                </section>
+                <section id="showcase">
+                    <h3>Example output</h3>
+                    <p id="results">Here are the results from prompting the model to write a sonnet about linguistics:</p>
+                    <pre>My love for language is a thing of beauty,
+A passion that has grown with each new day,
+For in its depths I find a sense of duty,
+To learn and teach in every single way!
+
+The study of its forms and sounds so sweet,
+The rules and structures that it does contain,
+The way it changes with the times we meet,
+A never ending source of joy and gain!
+
+The beauty of its words and phrases, too,
+The way they can be used to make us feel,
+The power of its stories, old and new,
+The way it can make our hearts so real!
+
+My love for language is a thing of grace,
+A passion that will never leave this place!</pre>
+                </section>
+                <section id="analysis">
+                    <h3>Analysis:</h3>
+                    <p>We can make two observations about the output:</p>
+                        <ol>
+                            <li>The sonnet is structurally correct</li>
+                            <li>The (rather subjective) quality of writing is not noticeably better than GPT-3 alone</li>
+                        </ol>
+                    <p>
+                        Thus, while the project succeeded in its goal of ensuring correct form,
+                        it should be noted that it does not improve writing quality.
+                    </p>
+                </section>
+            </article>
+            
+            <section id="mazeGame">
+                <h2>Maze game in Google Sheets</h2>
+                <p>
+                    This is an implementation of a simple game in Google Sheets.
+                    The specifications of the game were provided by Professor Kane
+                    as part of a homework assignment in CSE 101. The implementation
+                    relies on iterative-calculation-based ui elements that allow
+                    for the extension of Google Sheets interactions beyond what is
+                    normally possible.
+                </p>
+                <p>
+                    The spreadsheet in question can be found
+                    <a href="https://docs.google.com/spreadsheets/d/1Ok43AH3fMqpBjkyVxk7en9uhBf8E5SWZXmDXjKr24Gk/copy" rel="external"
+                    title="Spreadsheet maze game" target="_blank">here</a> (Google account is required).
+                </p>
+            </section>
+        </main>
+
+        <hr>
+
+        <footer>
+            <p id="credits">Page made by Brandon Roberts for Professor Powell's WI23 class of CSE 134B</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/favicon.svg">
+  <title>Login - Reporting for CSE 135</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+    }
+
+    #loginForm {
+      display: flex;
+      flex-direction: column;
+      width: 50ch;
+      background-color: lightgray;
+      border-radius: 10px;
+      border-color: lightblue;
+      border-style: solid;
+      padding: 10px;
+    }
+
+    #loginForm > * {
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    #submitButton {
+      margin-top: 10px;
+      background-color: blue;
+      color: white;
+    }
+
+    aside {
+      background-color: yellow;
+      border-radius: 10px;
+      border-color: black;
+      border-style: solid;
+      padding: 10px;
+      order: -1;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Login to continue to reports</h1>
+  <form id="loginForm" action="/index.php" method="POST">
+    <label for="user" id="userLabel">Username or email</label>
+    <input type="text" id="user" name="user" placeholder="username or email" required>
+    <label for="password" id="passwordLabel">Password</label>
+    <input type="password" id="password" name="password" placeholder="password" required>
+    <button type="submit" id="submitButton">Login</button>
+  </form>
+
+</body>
+
+</html>

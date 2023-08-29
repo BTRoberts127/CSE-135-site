@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/favicon.svg">
+  <title>Database</title>
+  <script type="module">
+    import '/zinggrid-master/index.js';
+  </script>
+  <!-- fallback for no module support -->
+  <script nomodule src="/zinggrid-master/dist/zinggrid.min.js" defer></script>
+</head>
+
+<body>
+    <h1>Data from REST API:</h1>
+    <h2>Static:</h2>
+    <zing-grid src="roberts135.online/analyticsapi/static" layout-controls column-width="200px"></zing-grid>
+    <h2>Performance:</h2>
+    <zing-grid src="roberts135.online/analyticsapi/performance" layout-controls column-width="200px"></zing-grid>
+    <h2>Activity:</h2>
+    <zing-grid src="roberts135.online/analyticsapi/activity" layout-controls>
+      <zg-column index="id" width="200px"></zg-column>
+      <zg-column index="activity" width="1000px"></zg-column>
+    </zing-grid>
+</body>
+
+</html>
